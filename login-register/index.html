@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Login & Register</title>
 </head>
+
 <body>
     <div class="container">
         <div class="curved-shape">
@@ -34,11 +36,50 @@
 
                 <div class="info-content login">
                     <h2 class="animation">WELCOME BACK!</h2>
-                    <p class="animation">We are happy to have you with us again. If you need anything, we are here to help.</p>
+                    <p class="animation">We are happy to have you with us again. If you need anything, we are here to
+                        help.</p>
+                </div>
+
+                <div class="form-box register">
+                    <h2 class="animation">Register</h2>
+                    <form action="#">
+                        <div class="input-box animation">
+                            <input type="text" required>
+                            <label for="">Username</label>
+                            <box-icon type='solid' name='user' color="gray"></box-icon>
+                        </div>
+
+                        <div class="input-box animation">
+                            <input type="email" required>
+                            <label for="">Email</label>
+                            <box-icon name='envelope' type='solid' color="gray"></box-icon>
+                        </div>
+
+                        <div class="input-box animation" style="--li:19; --S:3">
+                            <input type="password" required>
+                            <label for="">Password</label>
+                            <box-icon name='lock-alt' type='solid' color="gray"></box-icon>
+                        </div>
+
+                        <div class="input-box animation" style="--li:20; --S:4">
+                            <button class="btn" type="submit">Register</button>
+                        </div>
+
+                        <div class="regi-link animation">
+                            <p>Don't have an account? <br> <a href="#" class="SignInLink">Sign In</a></p>
+                        </div>
+                    </form>
+                </div>
+                <div class="info-content Register">
+                    <h2 class="animation">WELCOME!</h2>
+                    <p class="animation">We’re delighted to have you here. If you need any
+                        assistance, feel free to reach out.</p>
                 </div>
             </div>
         </div>
     </div>
 </body>
 <script src="script.js"></script>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
 </html>
