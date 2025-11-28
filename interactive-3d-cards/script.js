@@ -21,4 +21,11 @@ Vue.component('card', {
             this.height = this.$refs.card.offsetHeight;
         },
         props: ['dataImage'],
+        data: () => ({
+            width: 0,
+            height: 0,
+            mouseX: 0,
+            mouseY: 0,
+            mouseLeaveDelay: null
+        }),
 })
