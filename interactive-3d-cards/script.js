@@ -16,16 +16,46 @@ Vue.component('card', {
                 </div>
             </div>
         </div>`,
-        mounted() {
-            this.width = this.$refs.card.offsetWidth;
-            this.height = this.$refs.card.offsetHeight;
+    mounted() {
+        this.width = this.$refs.card.offsetWidth;
+        this.height = this.$refs.card.offsetHeight;
+    },
+    props: ['dataImage'],
+    data: () => ({
+        width: 0,
+        height: 0,
+        mouseX: 0,
+        mouseY: 0,
+        mouseLeaveDelay: null
+    }),
+    computed: {
+        mousePX() {
+            return this.mouseX / this.width;
         },
-        props: ['dataImage'],
-        data: () => ({
-            width: 0,
-            height: 0,
-            mouseX: 0,
-            mouseY: 0,
-            mouseLeaveDelay: null
-        }),
+        mousePY() {
+            return this.mouseY / this.height;
+        },
+        cardStyle() {
+            const rX = this.mousePX * 30;
+            const rY = this.mousePY * -30;
+            return {
+                transform: `rotateY(${rX}deg) rotateX(${rY}deg)`
+            };
+
+        },
+        cardBgTransform() {
+            const tX = this.mousePX * -40;
+            const tY = this.mousePY * -40;
+            return {
+                transform: `translateX(${tX}px) translateY(${tY}px)`
+            };
+
+        },
+        cardBgImage() {
+            return {
+                backgroundImage: `url(${this.dataImage})`
+            };
+
+        }
+    },
 })
