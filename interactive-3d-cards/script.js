@@ -55,9 +55,23 @@ Vue.component('card', {
             return {
                 backgroundImage: `url(${this.dataImage})`
             };
-
         }
     },
+    methods: {
+        handleMouseMove(e) {
+            this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width / 2;
+            this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height / 2;
+        },
+        handleMouseEnter() {
+            clearTimeout(this.mouseLeaveDelay);
+        },
+        handleMouseLeave() {
+            this.mouseLeaveDelay = setTimeout(() => {
+                this.mouseX = 0;
+                this.mouseY = 0;
+            }, 1000);
+        }
+    }
 })
 
 const app = new Vue({
