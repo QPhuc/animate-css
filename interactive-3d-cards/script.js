@@ -16,4 +16,9 @@ Vue.component('card', {
                 </div>
             </div>
         </div>`,
+        mounted() {
+            this.width = this.$refs.card.offsetWidth;
+            this.height = this.$refs.card.offsetHeight;
+        },
+        props: ['dataImage'],
 })
